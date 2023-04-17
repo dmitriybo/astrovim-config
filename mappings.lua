@@ -11,8 +11,10 @@ return {
     ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
     ["<leader>bD"] = {
       function()
-        require("astronvim.utils.status").heirline.buffer_picker(function(bufnr) require("astronvim.utils.buffer").close(
-          bufnr) end)
+        require("astronvim.utils.status").heirline.buffer_picker(function(bufnr)
+          require("astronvim.utils.buffer").close(
+            bufnr)
+        end)
       end,
       desc = "Pick to close",
     },
@@ -21,9 +23,17 @@ return {
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+
+    ["<S-Tab>"] = { '<cmd>bprev<cr>', desc = "Left tab" },
+    ["<Tab>"] = { '<cmd>bnext<cr>', desc = "Right tab" },
+    ["<C-b>"] = { '<C-]>', desc = "Go to file" },
+    ["<leader>v"] = { '<cmd>%bdelete|edit#|bdelete#<cr><cmd>Neotree show<cr>', desc = "Close all tabs without current" },
+    ["<leader>\\"] = { '<cmd>only<cr><cmd>Neotree show<cr>', desc = "Remove split screen" },
+    ["/"] = { '/', desc = "Fix langmapper bag" },
   },
   t = {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
   },
 }
+

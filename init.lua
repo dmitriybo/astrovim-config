@@ -40,7 +40,7 @@ return {
         -- disable lua_ls formatting capability if you want to use StyLua to format your lua code
         -- "lua_ls",
       },
-      timeout_ms = 5000, -- default format timeout
+      timeout_ms = 10000, -- default format timeout
       -- filter = function(client) -- fully override the default formatting function
       --   return true
       -- end
@@ -79,10 +79,6 @@ return {
 
     vim.api.nvim_set_keymap('i', '<C-v>', '<ESC>"+pa', { noremap = true })
     vim.api.nvim_set_keymap('n', '<leader>log', [[:call append(line('.'), 'console.log()')<CR>]],
-    { noremap = true, silent = true })
-    vim.api.nvim_set_keymap('n', '<S-Tab>', ':bprev<CR>', { noremap = true })
-    vim.api.nvim_set_keymap('n', '<Tab>', ':bnext<CR>', { noremap = true })
-    vim.api.nvim_set_keymap('n', '<C-b>', '<C-]>', { noremap = true })
+      { noremap = true, silent = true })
   end,
 }
-
