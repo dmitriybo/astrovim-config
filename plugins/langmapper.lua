@@ -6,4 +6,3 @@ return {
     require('langmapper').setup({ --[[ your config ]] })
   end,
 }
-
