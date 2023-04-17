@@ -77,6 +77,8 @@ return {
     --   },
     -- }
 
+    vim.api.nvim_set_keymap('n', '/', '/', { noremap = true })
+    vim.api.nvim_set_keymap('n', '.', '.', { noremap = true })
     vim.api.nvim_set_keymap('i', '<C-v>', '<ESC>"+pa', { noremap = true })
     vim.api.nvim_set_keymap('n', '<leader>log', [[:call append(line('.'), 'console.log()')<CR>]],
       { noremap = true, silent = true })

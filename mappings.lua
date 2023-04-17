@@ -24,8 +24,6 @@ return {
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
 
-    ["/"] = { '/', desc = "Fix langmapper bag" },
-    ["."] = { '.', desc = "Fix langmapper bag" },
     ["<S-Tab>"] = { '<cmd>bprev<cr>', desc = "Left tab" },
     ["<Tab>"] = { '<cmd>bnext<cr>', desc = "Right tab" },
     ["<C-b>"] = { '<C-]>', desc = "Go to file" },
