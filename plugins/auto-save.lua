@@ -19,9 +19,22 @@ return {
 				local fn = vim.fn
 				local utils = require("auto-save.utils.data")
 
+				local current_line = vim.api.nvim_eval("line('.')")
+				local prev_line = current_line - 1
+				if prev_line < 1 then
+					prev_line = 1
+				end
+				local next_line = current_line + 1
+
 				if
 						fn.getbufvar(buf, "&modifiable") == 1 and
-						utils.not_in(fn.getbufvar(buf, "&filetype"), {}) then
+						utils.not_in(fn.getbufvar(buf, "&filetype"), {}) and
+						(
+						vim.api.nvim_get_current_line():match("^%s*$") == nil or
+						vim.api.nvim_eval("getline(" .. prev_line .. ")"):match("^%s*$") ~= nil or
+						vim.api.nvim_eval("getline(" .. next_line .. ")"):match("^%s*$") ~= nil
+						)
+				then
 					return true         -- met condition(s), can save
 				end
 				return false          -- can't save
